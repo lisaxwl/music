@@ -1,0 +1,12 @@
+<!--pages/component/play.wxml-->
+<view  class="play_mask" name="item">
+	<view class="play_box" bindtap="toDetail">
+	<view class="play_cover_img"><image src="{{currentSong.coverImgUrl}}" class="cover_img"/></view>
+	<view class="play_song_title">{{currentSong.songName}} <view>做词:{{currentSong.author}}</view></view>
+	<view class="btns">
+		<view class="  {{isPlay ? 'play_btn play' :'play_btn pause'}}"  bindtap="play" data-testId="{{currentSong}}">
+			<view class="circle_progress" ></view>
+		</view>
+	</view>
+</view>
+</view>

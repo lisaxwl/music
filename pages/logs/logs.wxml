@@ -1,0 +1,9 @@
+<!--logs.wxml-->
+
+<view  class="play_box">
+	<audio bindtimeupdate="MusicStart" bindended="MusicEnd" wx:for="{{MusicList}}" wx:key="{{item}}" author="{{item.author}}" controls poster="{{item.coverImgUrl}}" name="{{item.songName}}" src='{{item.songurl}}'>
+	<view class="free-MusicProgress">
+	 <view style="width:{{progress}}%;"></view>
+	</view>
+	</audio>
+</view>

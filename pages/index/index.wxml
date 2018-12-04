@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view class="swiper-tab"> 
+  <view class="swiper-tab-list" data-current="0" bindtap="swichNav"> 推荐 <view class="{{currentTab==0 ? 'on' : ''}}"></view></view> 
+  <view class="swiper-tab-list" data-current="1" bindtap="swichNav">朋友 <view class="{{currentTab==1 ? 'on' : ''}}"></view></view> 
+  <view class="swiper-tab-list" data-current="2" bindtap="swichNav">电台 <view class="{{currentTab==2 ? 'on' : ''}}"></view></view> 
+</view> 
+  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight?winHeight-'40'+'px':'auto'}}" bindchange="bindChange"> 
+  <!-- 我是哈哈 -->
+  <swiper-item> 
+	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{beforeColor}}" 
+	         indicator-active-color="{{afterColor}}">
+	  <block wx:for="{{imgUrls}}"  wx:key="unique">
+	    <swiper-item>
+	      <image src="{{item.url}}" class="slide-image miusc_cover"/>
+	    </swiper-item>
+	  </block>
+	</swiper>
+
+
+	<view class="items">
+		<view class="circle_box"><span class="circle"><i class="bg bg1"></i></span>私人FM</view>
+		<view class="circle_box"><span class="circle"><i class="bg bg2"></i></span>每日推荐</view>
+		<view class="circle_box"><span class="circle"><i class="bg bg3"></i></span>歌单</view>
+		<view class="circle_box"><span class="circle"><i class="bg bg4"></i></span>排行榜</view>
+	</view>
+
+	<view class="line"></view>
+
+	<view class="music_list">
+		<text class="title">推荐歌单 <text class="iconfont icon-youbianjiantou"></text></text>
+		<view class="flex_box">
+			<view class="list_data"  wx:for="{{music_list}}" data-data="{{item}}"  wx:key="{{index}}" id="{{index}}" bindtap='songList'>
+				<image src="{{item.albumimg}}" class="data_img"/>
+				<text class="song_name">{{item.albumname}}</text>
+				<view class="listen-icon"><image src="../../images/listen-icon.png" class="listen_small_icon"/>58万</view>
+			</view>	
+		</view>
+	</view>
+
+	<view class="new_list">
+		<text class="title">最新音乐 <text class="iconfont icon-youbianjiantou"></text></text>
+		<view class="flex_box">
+			<view class="list_data"  wx:for="{{music_list}}" data-data="{{item}}"  wx:key="{{index}}" id="{{index}}" bindtap='songList'>
+				<image src="{{item.albumimg}}" class="data_img"/>
+				<text class="song_name">{{item.albumname}}</text>
+				<view class="listen-icon"><image src="../../images/listen-icon.png" class="listen_small_icon"/>58万</view>
+			</view>	
+		</view>
+	</view>
+  </swiper-item> 
+  <!-- 我是呵呵 -->
+  <swiper-item> 
+   <view>我是呵呵</view> 
+  </swiper-item> 
+  <!-- 我是嘿嘿 -->
+  <swiper-item> 
+   <view>我是嘿嘿</view> 
+  </swiper-item> 
+</swiper> 
+
+
+
+
+<!-- <import src="../component/play.wxml"/>
+<template is="item" data="{{list: currentSong,isPlay:isPlay}}"/> -->
+<play-footer inner-text="Some text"></play-footer>
+
+

@@ -1,0 +1,6 @@
+{
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+  	   	"play-footer": "../component/play"
+  }
+}

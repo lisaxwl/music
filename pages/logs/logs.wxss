@@ -1,0 +1,25 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+
+audio{
+  position: relative;
+  display:block;
+
+}
+audio .free-MusicProgress{
+  position: absolute;
+  width:78%;
+  left:21.7%;
+  bottom:1px;
+  background:#C3C3C3;
+}
+audio .free-MusicProgress>view{
+  background:#48c23d;
+  height:2px;
+}

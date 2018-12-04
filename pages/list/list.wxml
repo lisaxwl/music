@@ -1,0 +1,22 @@
+<!-- 歌曲排行榜列表 -->
+<view class="list-head">
+  <view class="list-img">
+    <image src="{{list.pic_album}}"></image>
+  </view>
+  <view class="list-text">
+    <text class="list-title">{{list.album}}</text>
+    <text class="list-time">{{list.time}}</text>
+  </view>
+</view>
+<!--  -->
+<view class="list-content">
+  <view class="list-item" wx:for="{{list.data}}" wx:key="{{index}}" id="{{index}}" bindtap="playsongTap" data-data="{{list}}" data-sign="1">
+    <view class="song-num">{{index+1}}</view>
+    <view class="song-info">
+      <text class="song-name">{{item.songName}}</text>
+      <view class="song-singer">
+        <text>{{item.singer}}</text>
+      </view>
+    </view>
+  </view>
+</view>
